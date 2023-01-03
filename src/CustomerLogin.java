@@ -172,7 +172,8 @@ public class CustomerLogin extends Login{
         }
     }
     void showOrder(Order order){
-        System.out.print("Order Id : "+order.getOrderId());
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("Order Id : "+order.getOrderId());
         System.out.println("Date and Time : "+order.getOrderedDate()+" / "+order.getOrderedTime());
         System.out.println("Hotel Name : "+order.getHotelName());
         System.out.println("Customer Name : "+order.getCustomerName());
@@ -185,9 +186,11 @@ public class CustomerLogin extends Login{
         System.out.println("----------------------------------------------------");
         System.out.println("Total Item : "+order.getTotalItem()+" \t Total Price : "+order.getTotalPrice());
         System.out.println("Address : "+order.getAddress().getDNumber()+","+order.getAddress().getStreet());
-        System.out.println(order.getAddress().getCity()+" - "+order.getAddress().getPinCode());
-        System.out.println(order.getAddress().getState());
+        System.out.println("\t\t "+order.getAddress().getCity()+" - "+order.getAddress().getPinCode());
+        System.out.println("\t\t "+order.getAddress().getState());
         System.out.println("Contact Number : "+order.getContactNumber());
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println();
     }
     boolean viewHotels(Customer customer){
         ArrayList<Hotel> hotels=storage.getHotels();
