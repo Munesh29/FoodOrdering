@@ -320,7 +320,7 @@ public class AdminLogin extends Login{
             System.out.println("Enter \"1\" for Previous");
         }
         if(index!=(size-1)){
-            System.out.println("ENter \"2\" for Next");
+            System.out.println("Enter \"2\" for Next");
         }
         System.out.println("Enter \"3\" for View Seller Hotel");
         System.out.println("Enter \"4\" for "+(isBlock?"UnBlock Seller":"Block Seller"));
