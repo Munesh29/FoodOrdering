@@ -58,6 +58,7 @@ public class CustomerLogin extends Login{
         }
         customer=new Customer(name,userName,password,emailId,contactNumber,null,null,null);
         storage.setCustomers(customer);
+        System.out.println("Customer Account is successfully Added");
     }
     boolean customerLogin() {
         while (true) {
