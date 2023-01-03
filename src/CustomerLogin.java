@@ -172,7 +172,7 @@ public class CustomerLogin extends Login{
         }
     }
     void showOrder(Order order){
-        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println("Order Id : "+order.getOrderId());
         System.out.println("Date and Time : "+order.getOrderedDate()+" / "+order.getOrderedTime());
         System.out.println("Hotel Name : "+order.getHotelName());
@@ -189,7 +189,7 @@ public class CustomerLogin extends Login{
         System.out.println("\t\t "+order.getAddress().getCity()+" - "+order.getAddress().getPinCode());
         System.out.println("\t\t "+order.getAddress().getState());
         System.out.println("Contact Number : "+order.getContactNumber());
-        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         System.out.println();
     }
     boolean viewHotels(Customer customer){

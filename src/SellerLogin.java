@@ -1295,7 +1295,7 @@ public class SellerLogin extends Login{
                                 date = LocalDate.parse(leaveDate);
                                 break;
                             } catch (Exception e) {
-                                System.out.println("Enter a Date Format in yyyy-MM-dd");
+                                System.out.println("Enter a Date Format in yyyy-MM-dd ");
                             }
                         }
                         if (leave == null) {
