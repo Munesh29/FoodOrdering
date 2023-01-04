@@ -52,9 +52,10 @@ public class SellerLogin extends Login{
                                     break checkEmailId;
                                 }else {
                                     emailIdMismatch();
-                                    String checkEmailOption = scan.next();
+                                    String checkEmailOption ;
                                     checkEmail:
                                     while (true) {
+                                        checkEmailOption = scan.next();
                                         switch (checkEmailOption) {
                                             case "1":
                                                 break checkEmail;
@@ -80,7 +81,10 @@ public class SellerLogin extends Login{
     }
     void createFoodSellerAccount() {
         System.out.println("Enter your Name");
-        String name=scan.nextLine();
+        String name;
+        do {
+            name = scan.nextLine();
+        } while (name.length() == 0);
         String userName;
         while(true) {
             System.out.println("Enter your UserName");
@@ -728,7 +732,7 @@ public class SellerLogin extends Login{
                                 i++;
                                 break ;
                             } else if (checkSellerOption.equals("3")) {
-                                editItem(availableItem.get(i));
+                                editItem(availableItem.get(i),hotel.getAvailableDays());
                                 break ;
                             } else if (checkSellerOption.equals("4")) {
                                 if (hotel.getHideItems() == null) {
@@ -797,7 +801,7 @@ public class SellerLogin extends Login{
         System.out.println("Enter \"9\" for Go-Back");
         System.out.println("Enter \"0\" for Exit");
     }
-    void editItem(Item item) {
+    void editItem(Item item,HashMap<Days,ArrayList<HotelTime>> hotelAvailableDays) {
         System.out.println("Item Name : "+item.getItemName());
         showEditOption();
         editItemName:
@@ -934,7 +938,7 @@ public class SellerLogin extends Login{
             String checkEditOption=scan.next();
             switch (checkEditOption){
                 case "1":
-                    item.setItemAvailableDays(assignItemAvailableDays(item.getItemAvailableDays()));
+                    item.setItemAvailableDays(assignItemAvailableDays(hotelAvailableDays));
                     break editAvailableDays;
                 case "2":
                     break editAvailableDays;

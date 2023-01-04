@@ -304,6 +304,7 @@ public class AdminLogin extends Login{
                         break;
                     } else if (checkOption.equals("5")) {
                         sellers.remove(sellers.get(i));
+                        break;
                     } else if (checkOption.equals("9")) {
                         return;
                     }else {

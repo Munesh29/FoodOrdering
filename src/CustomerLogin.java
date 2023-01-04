@@ -14,12 +14,9 @@ public class CustomerLogin extends Login{
     void addNewCustomer(){
         System.out.println("Enter a Name");
         String name;
-        while (true) {
+        do {
             name = scan.nextLine();
-            if(name.length()!=0){
-                break;
-            }
-        }
+        } while (name.length() == 0);
         String userName;
         while (true) {
             System.out.println("Enter a userName");
@@ -80,7 +77,7 @@ public class CustomerLogin extends Login{
                         case "2":
                             if(customer.getCart()==null){
                                 System.out.println("Cart is Empty");
-                            }else {
+                            } else {
                                 if (viewCart(customer)) {
                                     return true;
                                 }
@@ -309,7 +306,7 @@ public class CustomerLogin extends Login{
                                         }
                                         Cart cart = new Cart(hotel.getHotelId(), availableItem.get(i), quantity, availableItem.get(i).getPrice());
                                         boolean isSameHotel = true;
-                                        if (cartList!=null) {
+                                        if (cartList!=null && !(cartList.isEmpty())) {
                                             isSameHotel = hotel.getHotelId().equals(cartList.get(0).getHotelId());
                                         }
                                         if (cartList==null || !(isSameHotel)) {
@@ -402,7 +399,7 @@ public class CustomerLogin extends Login{
         ArrayList<Cart> cartList=customer.getCart();
         double totalPrice;
         int totalItem;
-        if(customer.getCart()!=null ) {
+        if(customer.getCart()!=null && !(customer.getCart().isEmpty())) {
             Hotel hotel = storage.getHotel(customer.getCart().get(0).getHotelId());
             if(hotel!=null) {
                 totalPrice=0D;
